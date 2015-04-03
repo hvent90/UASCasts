@@ -18,7 +18,6 @@ class AdminVideoController extends Controller {
 	 */
 	public function dashboard()
 	{
-		dd(public_path());
 		return view('admin.videos.dashboard')
 			->with('allVideos', Video::all());
 	}
