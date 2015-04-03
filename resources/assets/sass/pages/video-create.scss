@@ -1,0 +1,139 @@
+.awesome-form-container {
+	overflow: auto;
+
+	div.awesome-form-label {
+		height: 41px !important;
+		padding-right: 0;
+		background-color: #F9F9F9;
+		border-right: 4px solid #D5D5D5;
+		border-radius: 5px 0px 0px 5px;
+		color: #A9A9A9;
+
+	}
+
+	div.awesome-form-input {
+		padding-left: 0;
+		padding-right: 0;
+
+		input {
+			border-radius: 0px 5px 5px 0;
+		}
+
+		input {
+			height: 41px !important;
+		}
+	}
+
+	p#exp-date-psuedo-label {
+		margin: 0;
+		line-height: 41px;
+	}
+
+}
+
+.series-selector-container, .video-selector-container {
+	.series-selector, .video-selector {
+		margin-bottom: 10px;
+
+		.series-selector-selected, .video-selector-selected {
+			color: white;
+			background-color: white;
+
+
+			&.selected {
+				color: $primaryColor;
+				background-color: $primaryColor;
+			}
+
+			&.hover {
+				color: $primaryColor;
+				background-color: $primaryColor;
+			}
+		}
+
+		.series-selector-name, .video-selector-name {
+			padding-left: 20px;
+			border-left: 1px solid $primaryColor;
+			border-bottom: 1px solid $primaryColor;
+			overflow: auto;
+
+			&:hover {
+				background-color: $primaryColor;
+				color: white;
+				cursor: pointer;
+			}
+
+			&.selected {
+				color: white;
+				background-color: $primaryColor;
+			}
+		}
+
+		.series-order-list, .video-order-list {
+			margin-top: 20px;
+			list-style: none;
+			font-size: 150%;
+
+			li {
+				padding: 2px 7px;
+
+				&.this-video {
+					font-weight: bold;
+				}
+
+				.drag-handler {
+					margin-right: 7px;
+				}
+
+				&.draggable {
+					&:hover {
+						cursor: move !important;
+						cursor: -webkit-grabbing !important;
+						background-color: $primaryColor;
+						color: white;
+					}
+				}
+
+				.dull {
+					margin-right: 7px;
+					color: #ccc;
+				}
+			}
+		}
+
+	}
+}
+
+.video-selector-container {
+	.video-selector {
+		display: inline-block;
+		margin-right: 20px;
+
+		.video-selector-name {
+			display: inline-block;
+			padding-right: 20px;
+
+			h4 {
+				display: inline-block;
+				padding-right: 20px;
+			}
+
+			span {
+				display: none;
+			}
+		}
+
+		span {
+			position: relative;
+			bottom: 12px;
+			background-color: black;
+			padding: 5px;
+			color: white;
+			border-radius: 2px;
+
+			a {
+				color: white;
+			}
+		}
+	}
+}

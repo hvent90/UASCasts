@@ -1,0 +1,30 @@
+.hardware-cardware-container {
+
+	.card-jaundis {
+
+		.card-header {
+			background-color: $darkerBackgroundColor;
+
+			.card-image {
+				background-color: $darkerBackgroundColor;
+			}
+		}
+
+		.card-content {
+			overflow: auto;
+
+			img {
+				margin-right: 20px;
+			}
+		}
+
+		a {
+			color: white;
+
+			.card-action {
+				text-align: center;
+				background-color: $primaryColorDark;
+			}
+		}
+	}
+}

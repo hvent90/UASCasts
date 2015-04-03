@@ -1,0 +1,88 @@
+.series-show {
+	.card-header {
+		background-color: $darkBackgroundColor;
+		overflow: auto;
+
+		h1 {
+			color: white;
+			text-shadow: 2px 2px black;
+			// margin: 20px;
+		}
+
+		.card-image {
+			position: initial;
+			overflow: hidden;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+			background-position: center;
+			height: 200px;
+
+			img {
+				max-width: 100% !important;
+				max-height: 100% !important;
+				opacity: 1 !important;
+				filter: none !important;
+				-webkit-filter: grayscale(0%) !important;
+				max-height: 200px;
+			}
+
+
+		}
+	}
+
+	.card-content {
+		p {
+			font-size: 1.5em;
+			color: $midGray !important;
+		}
+	}
+
+	.card-action {
+		img {
+			-webkit-transition: all .3s ease;
+			-moz-transition: all .3s ease;
+			-o-transition: all .3s ease;
+			transition: all .3s ease;
+		}
+
+		a {
+			h4 {
+				color: $primaryColorDark;
+
+				&:hover {
+					color: white;
+					text-decoration: none;
+				}
+			}
+		}
+
+		p {
+			color: $darkerBackgroundColor;
+		}
+	}
+}
+
+a {
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.right {
+	span {
+		display: inline-block;
+		margin-bottom: 10px;
+		color: $darkBackgroundColor;
+
+		i {
+			color: $primaryColorDark;
+		}
+	}
+}
+
+.make-dis-shit-diff-color {
+	color: white !important;
+	background-color: $primaryColorDark;
+}

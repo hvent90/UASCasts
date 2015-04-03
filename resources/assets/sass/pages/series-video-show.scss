@@ -1,0 +1,61 @@
+.series-video-show {
+	.card {
+		margin-top: 0;
+	}
+
+	.card-header {
+		background-color: $darkerBackgroundColor;
+
+		h3, i {
+			color: $offWhite;
+			margin-bottom: 20px;
+		}
+	}
+
+}
+
+.hard-edges {
+	border-radius: 0 !important;
+}
+
+.video-jaundis-container {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: $darkBackgroundColor;
+
+	.video-jaundis {
+		margin: 0 auto;
+		float: none;
+	}
+}
+
+.video-information, .video-listings {
+	a .equipment-listing, .video-listing {
+		color: $niceDarkGrey;
+
+		&:hover {
+			color: white !important;
+			background-color: $primaryColorDark !important;
+		}
+
+		&.current-video {
+			font-weight: bold;
+			color: $niceDarkGrey;
+		}
+	}
+}
+
+.series-video-title {
+	a {
+		display: inline-block;
+		overflow: auto;
+	}
+
+	a h3, a i {
+		color: $primaryColorDark !important;
+	}
+}
+
+// .all-natural-baby {
+// 	height: auto !important;
+// }

@@ -1,0 +1,298 @@
+/* Hero */
+.hero {
+	background: url(/img/hero.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	// min-height: 100vh;
+	padding: 20vh 0;
+	height: auto;
+	min-height: 100vh;
+	text-align: center;
+
+	h2 {
+		color: #ccc;
+	}
+
+	p {
+		font-size: 75px;
+		color: white;
+		font-weight: bold;
+		line-height: 1em;
+	}
+
+	.sign-billy-up {
+		background-color: $primaryColor;
+		color: white;
+		font-size: 19px;
+  		padding: 12px 15px;
+  		margin-top: 10px;
+  		display: inline-block;
+	}
+
+	.sign-billy-up:hover {
+		// background-color: $primaryColorDark;
+		text-decoration: none;
+	}
+}
+
+/* Navbar */
+.landing-body {
+	background-color: $homepageBackgroundColor;
+
+	.navbar-fixed-top.navbar-absolute {
+		position: absolute;
+		margin: 0;
+	}
+	.navbar-inner {
+		background: transparent !important;
+	}
+	.navbar-inner container {
+		background: transparent !important;
+	}
+	.navbar {
+		background: transparent !important;
+	}
+	#nav-main {
+		background: transparent !important;
+	}
+	#banner {
+		background: transparent !important;
+	}
+
+	nav {
+		border-color: transparent;
+		padding: 20px 40px;
+	}
+}
+
+/* Piece */
+.homepage-piece {
+	padding-top: 3em;
+	padding-bottom: 3em;
+	counter-reset: section;
+}
+
+/* Featured Videos */
+.featured-videos {
+	padding-top: 3em;
+	padding-bottom: 3em;
+	counter-reset: section;
+
+	h2 {
+		font-weight: 300;
+		text-align: center;
+	}
+
+	.col-md-4 {
+		margin-bottom: 3em;
+	}
+
+	.featured-video {
+		margin-bottom: 0;
+		border-radius: 3px;
+		height: 200px;
+		width: 100%;
+		padding: 20px;
+		position: relative;
+		cursor: pointer;
+		display: table;
+		background-color: blue;
+
+		.lesson-block-thumbnail {
+			text-align: center;
+			margin-bottom: 50px;
+
+			i {
+				font-size: 5em;
+				color: $primaryColor;
+				position: relative;
+				line-height: 1em;
+				top: 20px;
+				text-shadow: 0 0 50px rgba(0,0,0,.3);
+			}
+		}
+
+		.lesson-block-difficulty {
+			color: #F9604C;
+			text-transform: uppercase;
+			margin-bottom: 5px;
+			font-size: .8em;
+			font-weight: 700;
+			margin-top: 10px;
+		}
+
+		.lesson-block-title {
+			text-align: left;
+			margin-top: 0;
+			margin-bottom: 0;
+			font-size: 1.5em;
+			letter-spacing: -.5px;
+			line-height: 1.2em;
+			color: #fff;
+			font-weight: 700;
+
+			a {
+				color: #fff;
+			}
+		}
+
+		.lesson-block-length {
+			position: relative;
+			top: 4px;
+			color: #F5F5F5;
+			font-size: 1.2em;
+			float: right;
+			margin-top: -24px;
+		}
+	}
+
+	.lesson-block-meta {
+		padding: 20px 0 14px;
+		overflow: hidden;
+		font-size: 1.05em;
+		line-height: 1em;
+
+		.lesson-date {
+			float: left;
+  			padding-top: 1px;
+			font-size: 1.05em;
+			line-height: 1em;
+			letter-spacing: -.1px;
+			color: #555;
+		}
+	}
+
+	.lesson-block-excerpt {
+		color: #9A9A9A;
+		font-size: 14.5px;
+		letter-spacing: -.1px;
+		line-height: 1.428571429;
+	}
+}
+
+/* Buy Please */
+#buy-please, #buy-please-again {
+  background: $darkerBackgroundColor;
+  color: #fff;
+  padding: 3em;
+
+  .card .awesome-header {
+  	background-color: white;
+
+	  h2 {
+	  	color: $niceDarkGrey;
+	  	font-weight: 400;
+
+		  a {
+		  	color: $primaryColor;
+		  }
+	  }
+
+  }
+
+}
+
+.piece-container {
+	position: relative;
+	z-index: -02;
+	background-color: $backgroundColor;
+}
+
+/* Testimonials */
+#testimonials {
+
+	h2 {
+		font-weight: 300;
+		text-align: center;
+
+		a {
+			color: #2D3037;
+		}
+	}
+
+	/* Grey border on bottom of each testimonial */
+	.testimonial:before {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		-ms-transform: skew(-3deg,-2deg);
+		-webkit-transform: skew(-3deg,-2deg);
+		-o-transform: skew(-3deg,-2deg);
+		-moz-transform: skew(-3deg,-2deg);
+		bottom: 14px;
+		box-shadow: 0 16px 5px rgba(0,0,0,.04);
+		max-width: 90%;
+		width: 90%;
+		height: 50px;
+		left: 1px;
+	}
+
+	.testimonial {
+		margin-bottom: 3em;
+		background: #fff;
+		padding: 2em;
+		// border-right: 30px solid $backgroundColor;
+		min-height: 169px;
+
+		h4 {
+			font-weight: 700;
+			margin-bottom: 8px;
+		}
+
+		.testimony-body {
+			font-size: .9em;
+			margin: 0 0 10px;
+			color: #555;
+		}
+	}
+
+}
+
+@media (max-width: 991px) {
+	/* Hero */
+	.hero {
+		height: auto;
+		padding: 10em 0;
+	}
+
+	/* Bye bye */
+	#testimonials, #buy-please-again {
+		// display: none;
+	}
+}
+
+@media (max-width: 767px) {
+	/* Hero */
+	.hero {
+		padding-bottom: 80px;
+	}
+}
+
+.awesome-header {
+	padding: 10px;
+	background-color: $primaryColorDark;
+	color: white;
+
+	h2 {
+		font-weight: 300;
+		text-align: center;
+		font-size: 30px;
+		margin: 20px;
+	}
+}
+
+.homie-login {
+	margin-top: 15px;
+	display: inline-block;
+	color: white;
+
+	&:hover {
+		color: $primaryColorLight;
+	}
+}
+
+.billy-is-here {
+	padding-bottom: 40px;
+}

@@ -1,0 +1,37 @@
+// @import "vendor/materialize";
+@import "vendor/hover/hover";
+
+@import "colors";
+
+@import "fonts";
+
+@import "nav";
+@import "nav-admin";
+
+@import "pages/home";
+@import "pages/plans";
+@import "pages/register";
+@import "pages/video-create";
+@import "pages/series-edit";
+@import "pages/series-show";
+@import "pages/series-video-show";
+@import "pages/video-dashboard";
+@import "pages/hardware-show";
+
+@import "footer";
+
+// @import "misc/material";
+@import "misc/snippets";
+
+::selection {
+  background: $primaryColor;
+  color: #fff;
+}
+
+.page {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin-bottom: -100px;
+	background: $backgroundColor;
+}
