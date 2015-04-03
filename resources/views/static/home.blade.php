@@ -64,6 +64,9 @@
 						<a href="/series/{{ $series->slug }}">
 							<div class="card-image">
 						        <img class="img-responsive" src="{{ $series->thumbnail_url }}.jpg">
+						        @if ($series->allVideosAreFree())
+						        	<span class="card-title video-card-free"><span>Free</span></span>
+						        @endif
 						        <span class="card-title"><i class="fa fa-{{ $series->font_awesome }}"></i><span>{{ $series->name }}</span></span>
 						    </div>
 					    </a>
