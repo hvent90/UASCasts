@@ -5183,6 +5183,10 @@ a:hover {
 .series-video-title a h3, .series-video-title a i {
   color: #7778E2 !important; }
 
+.video-dashboard-container {
+  padding-bottom: 40px;
+  padding-top: 40px; }
+
 .video-dashboard-container.card-jaundis .card .card-image img.no-transition {
   transition: none !important; }
 
