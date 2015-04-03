@@ -60,6 +60,11 @@ class UserController extends Controller {
 
 		$user = User::create($request->all());
 
+		if (User::all()->count() == 1) {
+			$user->permission = 9001;
+			$user->save();
+		}
+
 		Auth::login($user);
 
 		return $user;
