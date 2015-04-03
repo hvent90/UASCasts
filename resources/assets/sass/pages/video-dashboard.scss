@@ -32,6 +32,12 @@
 				-ms-transition: all .5s ease;
 				transition: all .5s ease;
 			}
+
+			.card-title {
+				// span {
+					text-shadow: 2px 2px black !important;
+				// }
+			}
 		}
 	}
 

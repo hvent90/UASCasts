@@ -5202,6 +5202,8 @@ a:hover {
       -webkit-filter: none;
               filter: none;
       transition: all .5s ease; }
+    .video-dashboard-container.card-jaundis .video-card.card .card-image .card-title {
+      text-shadow: 2px 2px black !important; }
 .video-dashboard-container.card-jaundis .card .card-image img.no-transition {
   transition: none !important; }
 

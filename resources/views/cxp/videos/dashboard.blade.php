@@ -26,8 +26,8 @@
 				<div class="col-md-4">
 					<div class="card hvr-grow-shadow video-card">
 						<a href="/videos/{{ $video->id }}">
-							<div class="card-image" style="background-image: url({{ $video->thumbnail_url }}.jpg)">
-						        {{-- <img class="no-transition" src="{{ $video->thumbnail_url }}.jpg"> --}}
+							<div class="card-image">
+						        <img class="no-transition" src="{{ $video->thumbnail_url }}.jpg">
 						        @if ($video->isFree())
 						        	<span class="card-title video-card-free"><span>Free</span></span>
 						        @endif
