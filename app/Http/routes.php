@@ -36,7 +36,7 @@ Route::post('/register/{period}', 'UserController@initialCharge');
  */
 	Route::get('dashboard', [
 	    'as'   => 'cxp-user.dashboard',
-	    'uses' => 'UserController@dashboard'
+	    'uses' => 'SeriesController@dashboard'
 	]);
 	Route::get('settings', [
 	    'as'   => 'cxp-user.settings',
