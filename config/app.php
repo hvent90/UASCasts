@@ -145,7 +145,6 @@ return [
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
-		'Laracasts\Utilities\JavaScript\JavaScriptServiceProvider',
 		'Laravel\Cashier\CashierServiceProvider',
 		'Intervention\Image\ImageServiceProvider',
 		'Vinkla\Vimeo\VimeoServiceProvider'
@@ -198,7 +197,6 @@ return [
 		'View'       => 'Illuminate\Support\Facades\View',
 		'Form'       => 'Illuminate\Html\FormFacade',
 		'Img' 	     => 'Intervention\Image\Facades\Image',
-		'Javascript' => 'Laracasts\Utilities\JavaScript\JavaScriptFacade',
 		'Vimeo' 	 => 'Vinkla\Vimeo\Facades\Vimeo'
 	],
 
