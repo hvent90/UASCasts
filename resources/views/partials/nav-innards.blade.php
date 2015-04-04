@@ -20,10 +20,10 @@ Hardware</a></li>
 
 		@if (Route::current()->getUri() == '/')
 		@else
-			<ul class="nav navbar-nav navbar-right">
+			<ul class="nav navbar-nav navbar-right material-design">
 				@if (Auth::guest())
 					<li><a href="{{ url('/auth/login') }}" class="hvr-grow">Log In</a></li>
-					<li><a id="register-nav" class="hvr-grow-shadow" href="{{ action('PagesController@plans') }}">Begin Learning</a></li>
+					<li><a id="register-nav" class="ripple-effect btn-primary hvr-grow-shadow" href="{{ action('PagesController@plans') }}">Begin Learning</a></li>
 				@else
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->display_name }} <span class="caret"></span></a>

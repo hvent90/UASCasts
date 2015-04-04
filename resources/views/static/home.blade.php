@@ -7,7 +7,7 @@
 		<div class="hvr-grow billy-is-here col-md-4 col-md-offset-8">
 			<h2>UNLOCK THE BEST UAS RESOURCE ON THE WEB</h2>
 			<a href="/series" class="hvr-grow"><p>HELLO, HAL</p></a>
-			<a class="hvr-grow sign-billy-up" href="/plans">Begin Learning Now</a> <br />
+			<a class="hvr-grow sign-billy-up hvr-shutter-out-horizontal-color ripple-effect" href="/plans">Begin Your Free Trial</a> <br />
 			<a class="homie-login hvr-grow " href="/auth/login">or login here</a>
 		</div>
 	</div>

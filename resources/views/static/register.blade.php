@@ -21,19 +21,21 @@
     data-image="/128x128.png">
   </script>
 </form>
-<div class="register-container">
+<div class="register-container material-design">
 	<div class="plan-header">
-		<h3>You'll be starting a free trial</h3>
+		<h3>You'll be starting a free 14 day trial</h3>
+		<h3>You will be charged upon expiration of trial</h3>
+		<h3>You will automatically be billed each period (month or year depending on your plan) until you unsubscribe</h3>
 	</div>
 	<div class="register-form-wrapper">
 		<div class="col-xs-12">
 			{!! Form::open(['action' => 'UserController@store', 'id' => 'signup-form']) !!}
 				<div class="btn-group btn-group-justified period-selectors" data-toggle="buttons">
-					<label id="month-period-label" class="period-labels btn btn-primary">
-						<input value="month" type="radio" name="period" id="month-radio" autocomplete="off">Month
+					<label id="month-period-label" class="period-labels btn btn-primary btn-raised ripple-effect">
+						<input value="month" type="radio" name="period" id="month-radio" autocomplete="off">$14/<small>Month</small>
 					</label>
-					<label id="year-period-label" class="period-labels btn btn-primary">
-						<input value="year" type="radio" name="period" id="year-radio" autocomplete="off">Year
+					<label id="year-period-label" class="period-labels btn btn-primary btn-raised ripple-effect">
+						<input value="year" type="radio" name="period" id="year-radio" autocomplete="off">$140/<small>Year</small>
 					</label>
 				</div>
 				<div class="register-form-container-featurette">
@@ -96,7 +98,7 @@
 						</fieldset>
 					</div>
 
- 					{!! Form::submit('Begin!', ['class' => 'hvr-grow-shadow', 'id' => 'login-button']) !!}
+ 					{!! Form::submit('Begin!', ['class' => 'ripple-effect hvr-grow-shadow', 'id' => 'login-button']) !!}
 					<span id="secure"><i id="secure-icon" class="fa fa-lock"></i>
  Payment is handled securely with <a href="http://stripe.com"><i id="stripe-icon" class="fa fa-cc-stripe"></i></a></span>
  					<ul id="errors" class="hidden alert alert-danger">

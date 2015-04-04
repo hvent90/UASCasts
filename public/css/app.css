@@ -1845,7 +1845,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: #38E4B6;
+    background: #7778E2;
     -webkit-transform: scaleX(0);
     -ms-transform: scaleX(0);
         transform: scaleX(0);
@@ -4722,7 +4722,7 @@ body {
   #month-plan i {
     color: #7778E2; }
   #month-plan a {
-    background-color: #7778E2;
+    background-color: #9293ff;
     color: white; }
 
 #year-plan {
@@ -4992,6 +4992,9 @@ hr {
   .month-container p#exp-date-psuedo-label {
     margin: 0;
     line-height: 30px; } }
+
+.period-selectors small {
+  font-size: 65%; }
 
 .awesome-form-container {
   overflow: auto; }
@@ -5269,6 +5272,15 @@ footer {
 
 .footer-fungi {
   margin-top: 30px; }
+
+.material-design .btn-primary {
+  background-color: #9293ff !important; }
+  .material-design .btn-primary.active {
+    background-color: #7778E2 !important; }
+    .material-design .btn-primary.active .ink {
+      background-color: #7778E2 !important; }
+.material-design .ripple-effect.btn-primary.active .ink {
+  background-color: #7778E2 !important; }
 
 .section-heading-divider {
   border-top: 4px solid #9293ff;

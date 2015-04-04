@@ -12,6 +12,8 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
+    mix.less('material.less');
+
     mix.sass('app.scss');
 
     mix.styles([
@@ -21,7 +23,8 @@ elixir(function(mix) {
         "vendor/sweet-alert.css",
         "vendor/video-js-resolutions.css",
         "vendor/select2.css",
-    	'css/app.css'
+        'css/app.css',
+        'css/material.css'
     ], 'public/output/final.css', 'public');
 
 

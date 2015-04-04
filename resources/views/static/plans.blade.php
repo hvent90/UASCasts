@@ -10,7 +10,7 @@
 		<div class="plan force-block" id="month-plan">
 			<div class="plan-header">
 				<h3 class="period-header-plan">Monthly</h3>
-				<span>$9/<small>month</small></span>
+				<span>$14/<small>month</small></span>
 			</div>
 			<ul class="fa-ul plan-features">
 				<li><i class="fa-li fa fa-check-square"></i>Feature bla bla bla</li>
@@ -18,7 +18,7 @@
 				<li><i class="fa-li fa fa-check-square"></i>Feature bla bla bla</li>
 			</ul>
 			<div class="plan-cta">
-				<a href="{{ action('UserController@register', 'month') }}" class="hvr-grow-shadow hvr-shutter-out-horizontal-color btn">Start your free 7 day trial</a>
+				<a href="{{ action('UserController@register', 'month') }}" class="hvr-grow-shadow hvr-shutter-out-horizontal-color btn">Start your free 14 day trial</a>
 			</div>
 		</div>
 	</div>
@@ -26,7 +26,7 @@
 		<div class="plan" id="year-plan">
 			<div class="plan-header">
 				<h3 class="period-header-plan">Yearly</h3>
-				<span>$99/<small>year</small></span>
+				<span>$140/<small>year</small></span>
 			</div>
 			<ul class="fa-ul plan-features">
 				<li><i class="fa-li fa fa-check-square"></i>Feature bla bla bla</li>
@@ -36,7 +36,7 @@
 				<li><i class="fa-li fa fa-check-square"></i>Feature bla bla bla</li>
 			</ul>
 			<div class="plan-cta force-block">
-				<a href="{{ action('UserController@register', 'year') }}" class="hvr-grow-shadow hvr-shutter-out-horizontal-color btn">Start your free 7 day trial</a>
+				<a href="{{ action('UserController@register', 'year') }}" class="hvr-grow-shadow hvr-shutter-out-horizontal-color btn">Start your free 14 day trial</a>
 			</div>
 		</div>
 	</div>
