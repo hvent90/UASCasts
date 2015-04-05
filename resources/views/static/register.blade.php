@@ -6,7 +6,7 @@
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="pk_test_TPTlHBmqMsFDX0fm97leQRKi"
     data-amount="900"
-    data-name="PX4Casts"
+    data-name="UASCasts"
     data-description="Monthly subscription for $9"
     data-image="/128x128.png">
   </script>
@@ -15,9 +15,9 @@
   <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="pk_test_TPTlHBmqMsFDX0fm97leQRKi"
-    data-amount="9900"
-    data-name="PX4Casts"
-    data-description="Yearly subscription for $99"
+    data-amount="9000"
+    data-name="UASCasts"
+    data-description="Yearly subscription for $90"
     data-image="/128x128.png">
   </script>
 </form>
@@ -32,10 +32,10 @@
 			{!! Form::open(['action' => 'UserController@store', 'id' => 'signup-form']) !!}
 				<div class="btn-group btn-group-justified period-selectors" data-toggle="buttons">
 					<label id="month-period-label" class="period-labels btn btn-primary btn-raised ripple-effect">
-						<input value="month" type="radio" name="period" id="month-radio" autocomplete="off">$14/<small>Month</small>
+						<input value="month" type="radio" name="period" id="month-radio" autocomplete="off">$9/<small>Month</small>
 					</label>
 					<label id="year-period-label" class="period-labels btn btn-primary btn-raised ripple-effect">
-						<input value="year" type="radio" name="period" id="year-radio" autocomplete="off">$140/<small>Year</small>
+						<input value="year" type="radio" name="period" id="year-radio" autocomplete="off">$90/<small>Year</small>
 					</label>
 				</div>
 				<div class="register-form-container-featurette">

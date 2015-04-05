@@ -4272,6 +4272,15 @@ text-shadow: 0em 0em 1em #FFF;
     width: 25px;
     height: 25px; }
 
+.material-design .btn-primary {
+  background-color: #9293ff; }
+  .material-design .btn-primary.active {
+    background-color: #7778E2 !important; }
+    .material-design .btn-primary.active .ink {
+      background-color: #7778E2 !important; }
+.material-design .ripple-effect.btn-primary.active .ink {
+  background-color: #7778E2 !important; }
+
 body {
   font-size: 14px;
   line-height: 1.428571429; }
@@ -4843,14 +4852,12 @@ body {
   border-radius: 0 5px 0 0; }
 
 .period-labels {
-  background-color: #7778E2;
+  background-color: #9293ff;
   transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, width 0.3s ease; }
-  .period-labels:hover {
-    background-color: #7778E2; }
   .period-labels.active {
     font-weight: bold;
     font-size: 120%;
-    background-color: #38E4B6;
+    background-color: #7778E2;
     transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, width 0.3s ease; }
 
 .register-form-container-featurette {
@@ -5316,15 +5323,6 @@ footer {
 
 .footer-fungi {
   margin-top: 30px; }
-
-.material-design .btn-primary {
-  background-color: #9293ff !important; }
-  .material-design .btn-primary.active {
-    background-color: #7778E2 !important; }
-    .material-design .btn-primary.active .ink {
-      background-color: #7778E2 !important; }
-.material-design .ripple-effect.btn-primary.active .ink {
-  background-color: #7778E2 !important; }
 
 .section-heading-divider {
   border-top: 4px solid #9293ff;
@@ -5829,17 +5827,17 @@ input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, inp
 }
 .material-design .btn-primary,
 .material-design .dropdown-toggle.btn-primary {
-  background-color: #5677fc;
+  background-color: #9293ff;
 }
 .material-design .btn-primary:hover,
 .material-design .dropdown-toggle.btn-primary:hover {
-  background-color: #4e6cef;
+  background-color: #9293ff;
 }
 .material-design .btn-primary:active,
 .material-design .dropdown-toggle.btn-primary:active,
 .material-design .btn-primary.active,
 .material-design .dropdown-toggle.btn-primary.active {
-  background-color: #4e6cef;
+  background-color: #9293ff;
 }
 .material-design .btn-primary:focus,
 .material-design .dropdown-toggle.btn-primary:focus {
@@ -5862,7 +5860,7 @@ input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, inp
   background-color: transparent;
 }
 .material-design .btn-flat.btn-primary:hover {
-  color: #4e6cef;
+  color: #9293ff;
   background-color: #e5e5e5;
 }
 .material-design .btn-flat.btn-primary:active,

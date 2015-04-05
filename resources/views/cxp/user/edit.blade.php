@@ -15,9 +15,9 @@
   <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="pk_test_TPTlHBmqMsFDX0fm97leQRKi"
-    data-amount="9900"
+    data-amount="9000"
     data-name="PX4Casts"
-    data-description="Yearly subscription for $99"
+    data-description="Yearly subscription for $90"
     data-image="/128x128.png">
   </script>
 </form>
@@ -29,12 +29,12 @@
 					<div class="plan-header">
 						<h2>Click a plan below to begin your subscription!</h2>
 					</div>
-					<div class="btn-group btn-group-justified period-selectors" data-toggle="buttons">
-						<label id="month-period-label-create" class="period-labels btn btn-primary">
+					<div class="material-design btn-group btn-group-justified period-selectors" data-toggle="buttons">
+						<label id="month-period-label-create" class="ripple-effect period-labels btn btn-primary">
 							<input value="month" type="radio" name="period" id="month-radio" autocomplete="off">$9 per month
 						</label>
-						<label id="year-period-label-create" class="period-labels btn btn-primary">
-							<input value="year" type="radio" name="period" id="year-radio" autocomplete="off">$99 per year
+						<label id="year-period-label-create" class="ripple-effect period-labels btn btn-primary">
+							<input value="year" type="radio" name="period" id="year-radio" autocomplete="off">$90 per year
 						</label>
 					</div>
 				@else
@@ -102,7 +102,8 @@
 						</fieldset>
 					</div>
 
-					<button id="register-button">Update</button>
+					{{-- <button class="" id="register-button">Update</button> --}}
+					<button class="ripple-effect hvr-grow-shadow" id="login-button">Update</button>
 
  					{!! Form::submit('Update', ['id' => 'real-slim-slady', 'class' => 'hidden']) !!}
 
@@ -113,23 +114,23 @@
 			{!! Form::close() !!}
 			@if( Auth::user()->stripe_active == 1 )
 				{!! Form::open(['action' => 'UserController@update']) !!}
-					<div class="btn-group btn-group-justified period-selectors bottons-on-da-bottom" data-toggle="buttons">
+					<div class="material-design btn-group btn-group-justified period-selectors bottons-on-da-bottom" data-toggle="buttons">
 						@if ( Auth::user()->getStripePlan() == 'month' )
 							<label id="month-period-label-modify-disabled" class="disabled-period period-labels left-button btn btn-primary">
 								<input value="month" type="radio" name="period" id="month-radio" autocomplete="off">You're subscribed at $9/month
 							</label>
-							<label id="year-period-label-modify" class="period-labels btn btn-primary">
-								<input value="year" type="radio" name="period" id="year-radio" autocomplete="off">Switch to $99 per year
+							<label id="year-period-label-modify" class="period-labels btn btn-primary ripple-effect">
+								<input value="year" type="radio" name="period" id="year-radio" autocomplete="off">Switch to $9 per year
 							</label>
 						@else
-							<label id="month-period-label-modify" class="period-labels left-button btn btn-primary">
+							<label id="month-period-label-modify" class="period-labels left-button btn btn-primary ripple-effect">
 								<input value="month" type="radio" name="period" id="month-radio" autocomplete="off">Switch to $9 per month
 							</label>
 							<label id="year-period-label-modify-disabled" class="disabled-period period-labels btn btn-primary">
-								<input value="year" type="radio" name="period" id="year-radio" autocomplete="off">You're subscribed at $99/year
+								<input value="year" type="radio" name="period" id="year-radio" autocomplete="off">You're subscribed at $9/year
 							</label>
 						@endif
-						<label id="cancel-period-label-modify" class="period-labels right-button btn btn-primary">
+						<label id="cancel-period-label-modify" class="period-labels right-button btn btn-primary ripple-effect">
 							<input value="cancel" type="radio" name="period" id="cancel-radio" autocomplete="off">Unsubscribe
 						</label>
 					</div>
@@ -148,7 +149,7 @@
 @section('scripts')
 <script>
 $('document').ready(function() {
-	$('#register-button').click(function(e) {
+	$('#login-button').click(function(e) {
 		e.preventDefault();
 
 		putSessionVariable('intent', 'Edit the user credentials',
