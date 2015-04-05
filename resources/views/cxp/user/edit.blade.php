@@ -120,14 +120,14 @@
 								<input value="month" type="radio" name="period" id="month-radio" autocomplete="off">You're subscribed at $9/month
 							</label>
 							<label id="year-period-label-modify" class="period-labels btn btn-primary ripple-effect">
-								<input value="year" type="radio" name="period" id="year-radio" autocomplete="off">Switch to $9 per year
+								<input value="year" type="radio" name="period" id="year-radio" autocomplete="off">Switch to $90 per year
 							</label>
 						@else
 							<label id="month-period-label-modify" class="period-labels left-button btn btn-primary ripple-effect">
 								<input value="month" type="radio" name="period" id="month-radio" autocomplete="off">Switch to $9 per month
 							</label>
 							<label id="year-period-label-modify-disabled" class="disabled-period period-labels btn btn-primary">
-								<input value="year" type="radio" name="period" id="year-radio" autocomplete="off">You're subscribed at $9/year
+								<input value="year" type="radio" name="period" id="year-radio" autocomplete="off">You're subscribed at $90/year
 							</label>
 						@endif
 						<label id="cancel-period-label-modify" class="period-labels right-button btn btn-primary ripple-effect">
