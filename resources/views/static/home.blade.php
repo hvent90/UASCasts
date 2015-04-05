@@ -4,12 +4,21 @@
 
 <div class="hero">
 	<div class="container">
-		<div class="hvr-grow billy-is-here col-md-4 col-md-offset-8">
-			<h2>UNLOCK THE BEST UAS RESOURCE ON THE WEB</h2>
-			<a href="/series" class="hvr-grow"><p>HELLO, HAL</p></a>
-			<a class="hvr-grow sign-billy-up hvr-shutter-out-horizontal-color ripple-effect" href="/plans">Begin Your Free Trial</a> <br />
-			<a class="homie-login hvr-grow " href="/auth/login">or login here</a>
-		</div>
+		@if (! Auth::check() )
+			<div class="hvr-grow billy-is-here col-md-4 col-md-offset-8">
+				<h2>UNLOCK THE BEST UAS RESOURCE ON THE WEB</h2>
+				<a href="/series" class="hvr-grow"><p>HELLO, HAL</p></a>
+				<a class="hvr-grow sign-billy-up hvr-shutter-out-horizontal-color ripple-effect" href="/plans">Begin Your Free Trial</a> <br />
+				<a class="homie-login hvr-grow " href="/auth/login">or login here</a>
+			</div>
+		@else
+			<div class="hvr-grow billy-is-here col-md-4 col-md-offset-8">
+				<h2>WELCOME BACK</h2>
+				<a href="/series" class="hvr-grow"><p>{{ Auth::user()->display_name }}</p></a>
+				<br />
+				<a class="hvr-grow sign-billy-up hvr-shutter-out-horizontal-color ripple-effect" href="/series">Launch!</a> <br />
+			</div>
+		@endif
 	</div>
 </div>
 
