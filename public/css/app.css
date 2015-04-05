@@ -4412,6 +4412,12 @@ body {
   nav .container {
     width: auto; } }
 
+@media (max-width: 768px) {
+  nav#landing-nav #bs-example-navbar-collapse-1 {
+    background-color: #9293ff; }
+  nav#landing-nav .container ul.nav a.nav-path:hover {
+    color: white; } }
+
 #nav-admin {
   border-top: 1px solid #e3e3e3; }
 
@@ -5276,6 +5282,9 @@ footer {
     padding-top: 40px;
     color: #CCC;
     font-size: 1.1em; }
+  footer .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important; }
 
 .footer-fungi {
   margin-top: 30px; }

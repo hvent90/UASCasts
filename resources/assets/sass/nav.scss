@@ -240,3 +240,21 @@
 		width: auto;
 	}
 }
+
+@media (max-width: 768px) {
+
+	nav#landing-nav {
+		#bs-example-navbar-collapse-1 {
+			background-color: $primaryColor;
+		}
+		.container {
+			ul.nav {
+				a.nav-path {
+					&:hover {
+						color: white;
+					}
+				}
+			}
+		}
+	}
+}
