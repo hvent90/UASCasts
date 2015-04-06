@@ -20,8 +20,22 @@
 	</div>
 </div> --}}
 
-<div class="container" style="padding-top: 40px; padding-bottom: 40px;">
-	<div class="row card-jaundis">
+<div class="container" style="padding-bottom: 40px;">
+
+	@if (Session::has('success'))
+		<div class="plan-header container flash-container">
+			<div class="panel panel-success">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Success!</h3>
+			  </div>
+			  <div class="panel-body">
+				{{ Session::get('success') }}
+			  </div>
+			</div>
+		</div>
+	@endif
+
+	<div style="padding-top: 30px;" class="row card-jaundis">
 		@foreach ($allSeries as $series)
 			<div class="col-md-4">
 				<div class="card hvr-grow-shadow">

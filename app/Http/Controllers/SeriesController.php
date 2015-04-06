@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use Session;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Series;

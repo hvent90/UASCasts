@@ -22,10 +22,23 @@
   </script>
 </form>
 <div class="register-container material-design">
-	<div class="plan-header">
-		<h3>You'll be starting a free 14 day trial</h3>
-		<h3>You will be charged upon expiration of trial</h3>
-		<h3>You will automatically be billed each period (month or year depending on your plan) until you unsubscribe</h3>
+
+	<div class="plan-header container">
+		<div class="panel panel-success">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Hello!</h3>
+		  </div>
+		  <div class="panel-body">
+			<ul class="fa-ul">
+				<li><i class="fa-li fa fa-check-square"></i>You'll be starting a <strong>free 14 day trial</strong>.</li>
+				<li><i class="fa-li fa fa-check-square"></i>You will automatically be charged upon expiration of trial.</li>
+				<li><i class="fa-li fa fa-check-square"></i>You will automatically be billed each period (month or year depending on your plan) <strong>until you unsubscribe.</strong></li>
+			</ul>
+		  </div>
+		</div>
+		{{-- <div class="alert alert-dismissible alert-success">
+			<button type="button" class="close" data-dismiss="alert">×</button>
+		</div> --}}
 	</div>
 	<div class="register-form-wrapper">
 		<div class="col-xs-12">
@@ -101,9 +114,20 @@
  					{!! Form::submit('Begin!', ['class' => 'ripple-effect hvr-grow-shadow', 'id' => 'login-button']) !!}
 					<span id="secure"><i id="secure-icon" class="fa fa-lock"></i>
  Payment is handled securely with <a href="http://stripe.com"><i id="stripe-icon" class="fa fa-cc-stripe"></i></a></span>
- 					<ul id="errors" class="hidden alert alert-danger">
 
- 					</ul>
+ 					<div style="margin-top: 40px;" id="errors-panel" class="hidden panel panel-danger">
+					  <div class="panel-heading">
+					    <h3 class="panel-title">Woops!</h3>
+					  </div>
+					  <div class="panel-body">
+						<ul id="errors" class="fa-ul">
+						</ul>
+					  </div>
+					</div>
+
+ 					{{-- <ul id="errors" class="hidden alert alert-danger">
+
+ 					</ul> --}}
 				</div>
 			{!! Form::close() !!}
 			</div>
@@ -224,12 +248,12 @@ $('document').ready(function(){
 			},
 			error: function(data){
 				$('#login-button').val('Begin!');
-				$('#errors').removeClass('hidden');
+				$('#errors-panel').removeClass('hidden');
 				$('#errors').html('');
 		        var errors = data.responseJSON;
 		        for (var key in errors) {
 					if (errors.hasOwnProperty(key)) {
-						$('#errors').append('<p>'+errors[key]+'</p>');
+						$('#errors').append('<li><i class="fa-li fa fa-exclamation-circle "></i>'+errors[key]+'</li>');
 					}
 				}
 		    }

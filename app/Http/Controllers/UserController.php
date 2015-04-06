@@ -76,6 +76,12 @@ class UserController extends Controller {
 
 		Auth::user()->subscription(Session::pull('period'))->create($token);
 
+		if ($period == 'month') {
+			Session::flash('success', 'You have been signed up on the monthly plan! Liftoff in 5...');
+		} else {
+			Session::flash('success', 'You have been signed up on the monthly plan! Liftoff in 5...');
+		}
+
 		return redirect()->route('cxp-user.dashboard');
 	}
 
