@@ -15,7 +15,7 @@ class PagesController extends Controller {
 	public function home()
 	{
 		return view('static.home')
-			->with('allSeries', Series::all());
+			->with('allSeries', Series::where('featured', 1)->get());
 	}
 
 	/**

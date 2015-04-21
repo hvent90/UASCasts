@@ -44,6 +44,11 @@ class AdminSeriesController extends Controller {
 		$series->description = $request->get('description');
 		$series->thumbnail_url = 'temp';
 		$series->font_awesome = $request->get('font_awesome');
+
+		if ($request->has('featured')) {
+			$series->featured = 1;
+		}
+
 		$series->save();
 
 		$file = $request->file('thumbnail_url');
@@ -98,6 +103,11 @@ class AdminSeriesController extends Controller {
 		}
 		if ($request->has('font_awesome')) {
 			$series->font_awesome = $request->get('font_awesome');
+		}
+		if ($request->has('featured')) {
+			$series->featured = 1;
+		} else {
+			$series->featured = 0;
 		}
 
 		if ($request->hasFile('thumbnail_url')) {

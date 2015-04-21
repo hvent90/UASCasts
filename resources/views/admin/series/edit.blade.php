@@ -27,6 +27,12 @@
 						<fieldset class="form-division">
 							<h3><span class="form-step">1</span>Basic Info</h3>
 							<div class="row">
+								<div class="form-group col-sm-12 disregard-form-styles form-group">
+									{!! Form::label('featured', 'Is this series Featured? ') !!}
+									{!! Form::checkbox('featured', null, null, ['placeholder' => 'Is this series Featured?']) !!}
+								</div>
+							</div>
+							<div class="row">
 								<div class="form-item col-sm-12">
 									{!! Form::label('name', 'Title: *') !!}
 									{!! Form::text('name', null, ['placeholder' => 'Title: *', 'class' => 'form-control']) !!}
