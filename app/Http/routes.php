@@ -83,7 +83,7 @@ Route::post('/register/{period}', 'UserController@initialCharge');
 		'as'   => 'cxp-hardware.dashboard',
 		'uses' => 'HardwareController@dashboard'
 	]);
-	Route::get('hardware/{id}', [
+	Route::get('hardware/{hardwareSlug}', [
 		'as'   => 'cxp-hardware.show',
 		'uses' => 'HardwareController@show'
 	]);

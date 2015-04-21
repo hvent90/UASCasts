@@ -7,7 +7,7 @@ use App\Http\Requests\StoreVideoRequest;
 use App\Series;
 use App\Video;
 use Illuminate\Http\Request;
-use DB, Img, Vimeo;
+use cURL, DB, Img, Vimeo;
 
 class AdminVideoController extends Controller {
 
@@ -43,11 +43,31 @@ class AdminVideoController extends Controller {
 			];
 		}
 
+		$result = cURL::newRequest('post', 'https://api.vimeo.com/me/videos', [
+				'type' => 'streaming',
+				'upgrade_to_1080' => 'true'
+			])
+			// ->setHeader('content-type', 'application/json')
+			// ->setHeader('Accept', 'json')
+			->setHeader('Authorization', 'bearer f5f0f2ab9682194687abf2ffa487a202')
+			->setOptions([CURLOPT_VERBOSE => true])
+			->send();
+
+		$vimeoUrl = json_decode($result->body)->upload_link_secure;
+		$completeUri = json_decode($result->body)->complete_uri;
+
+		// header('Access-Control-Allow-Origin: *');
+		// header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
+		header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Request-With, Content-Disposition');
+		// header('Access-Control-Allow-Credentials: true');
+
 		return view('admin.videos.create')
 			->with('allSeries', Series::all())
 			->with('vimeoVideos', $vimeoVideos)
-			->with('categories', Category::all());
-	}
+			->with('categories', Category::all())
+			->with('vimeoUrl', $vimeoUrl)
+			->with('completeUri', $completeUri);
+		}
 
 	/**
 	 * Create the video.
@@ -58,6 +78,27 @@ class AdminVideoController extends Controller {
 	{
 		// dd(json_decode($request->get('series')));
 		$vimeoInformation = json_decode($request->get('video'));
+
+		if ($vimeoInformation->uri == 'upload') {
+			$vimeoResponse = Vimeo::request('/videos/'.$vimeoInformation->id, null, 'GET');
+
+			$vimeoInformation->uri = $vimeoResponse['body']['uri'];
+			$vimeoInformation->name = $vimeoResponse['body']['name'];
+			$vimeoInformation->link = $vimeoResponse['body']['link'];
+			$vimeoInformation->duration = $vimeoResponse['body']['duration'];
+			$vimeoInformation->video_url_sd = $vimeoResponse['body']['files'][0]['link'];
+			$vimeoInformation->video_url_hd = $vimeoResponse['body']['files'][1]['link'];
+
+			$vimeoResponse = Vimeo::request('/videos/'.$vimeoInformation->id, [
+					'name' => $request->get('name'),
+					'privacy.view' => 'disable',
+					'review_link' => 'false'
+				],
+				'PATCH'
+			);
+
+			dd($vimeoResponse);
+		}
 
 		/**
 		 * Create the model

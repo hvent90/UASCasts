@@ -44,6 +44,7 @@ class AdminHardwareController extends Controller {
 		$hardware = new Hardware;
 		$hardware->url = $request->get('url');
 		$hardware->name = $request->get('name');
+		$hardware->slug = $this->slugify($request->get('name'));
 		$hardware->description = $request->get('description');
 		$hardware->thumbnail_url = 'temp';
 		$hardware->save();
@@ -123,6 +124,7 @@ class AdminHardwareController extends Controller {
 		 */
 		if ($request->has('name')) {
 			$hardware->name = $request->get('name');
+			$hardware->slug = $this->slugify($request->get('name'));
 		}
 		if ($request->has('description')) {
 			$hardware->description = $request->get('description');
@@ -186,6 +188,15 @@ class AdminHardwareController extends Controller {
 		$hardware->delete();
 
 		return redirect()->action('Admin\AdminHardwareController@dashboard');
+	}
+
+	function slugify($str) {
+		$clean = iconv('UTF-8', 'ASCII//TRANSLIT', $str);
+		$clean = preg_replace("/[^a-zA-Z0-9\/_| -]/", '', $clean);
+		$clean = strtolower(trim($clean, '-'));
+		$clean = preg_replace("/[\/_| -]+/", '-', $clean);
+
+		return $clean;
 	}
 
 }

@@ -197,7 +197,8 @@ return [
 		'View'       => 'Illuminate\Support\Facades\View',
 		'Form'       => 'Illuminate\Html\FormFacade',
 		'Img' 	     => 'Intervention\Image\Facades\Image',
-		'Vimeo' 	 => 'Vinkla\Vimeo\Facades\Vimeo'
+		'Vimeo' 	 => 'Vinkla\Vimeo\Facades\Vimeo',
+		'cURL'       => 'anlutro\cURL\Laravel\cURL'
 	],
 
 ];

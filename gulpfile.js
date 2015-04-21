@@ -27,6 +27,10 @@ elixir(function(mix) {
         'css/material.css'
     ], 'public/output/final.css', 'public');
 
+    mix.styles([
+        'vendor/jquery.fileupload.css'
+    ], 'public/output/video-create.css', 'public');
+
 
     mix.scriptsIn('resources/assets/js', 'public/js/app.js');
 
@@ -39,5 +43,12 @@ elixir(function(mix) {
         "vendor/sortable.js",
         "vendor/select2.js"
 	], "public/output/final.js", 'public');
+
+    mix.scripts([
+        // "vendor/jquery.ui.widget.js",
+        // "vendor/jquery.iframe-transport.js",
+        // "vendor/jquery.fileupload.js",
+        "vendor/vimeo-video-upload.js"
+    ], "public/output/video-create.js", 'public');
 
 });

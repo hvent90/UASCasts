@@ -72,7 +72,7 @@
 						<p>Required Equipment</p>
 					</div>
 					@foreach ($video->hardware as $hardware)
-						<a href="/hardware/{{ $hardware->id }}">
+						<a href="/hardware/{{ $hardware->slug }}">
 							<div class="card-action equipment-listing">
 								{{ $hardware->name }}
 							</div>

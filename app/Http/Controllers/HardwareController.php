@@ -45,10 +45,10 @@ class HardwareController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($hardwareSlug)
 	{
 		return view('cxp.hardware.show')
-			->with('hardware', Hardware::find($id));
+			->with('hardware', Hardware::where('slug', $hardwareSlug)->firstOrFail());
 	}
 
 	/**

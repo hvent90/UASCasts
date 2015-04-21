@@ -1,4 +1,4 @@
-@extends('admin')
+@extends('admin-video')
 
 @section('content')
 <div class="register-container">
@@ -78,23 +78,45 @@
 								</div>
 							</div>
 
-							<div class="video-selector-container">
-								@foreach($vimeoVideos as $vimeoVideo)
-									<div class="video-selector">
-										<div id="{{ $vimeoVideo['uri'] }}" class="video-selector-name">
-											<h4>{{ $vimeoVideo['name'] }}</h4>
-											<span class="uri">{{ $vimeoVideo['uri'] }}</span>
-											<span class="link">{{ $vimeoVideo['link'] }}</span>
-											<span class="video_url_hd">{{ $vimeoVideo['video_url_hd'] }}</span>
-											<span class="video_url_sd">{{ $vimeoVideo['video_url_sd'] }}</span>
-											<span class="duration">{{ $vimeoVideo['duration'] }}</span>
+							<div class="bs-component">
+								<ul class="nav nav-tabs">
+									<li class="active"><a href="#home" data-toggle="tab" aria-expanded="true">Upload a Video</a></li>
+									<li class=""><a href="#profile" data-toggle="tab" aria-expanded="false">Select a Video</a></li>
+								</ul>
+								<div id="myTabContent" class="tab-content">
+									<div class="tab-pane fade active in" id="home">
+										<div id="drop_zone">Drop files here</div>
+										<br>
+										<div class="progress">
+											<div id="progress" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="46" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+											0%
+											</div>
 										</div>
-										<span class="vimeo-link">
-											<a href="{{ $vimeoVideo['link'] }}">VIMEO</a>
-										</span>
+										<div id="results"></div>
 									</div>
-								@endforeach
+									<div class="tab-pane fade" id="profile">
+										<div class="video-selector-container">
+											@foreach($vimeoVideos as $vimeoVideo)
+												<div class="video-selector">
+													<div id="{{ $vimeoVideo['uri'] }}" class="video-selector-name">
+														<h4>{{ $vimeoVideo['name'] }}</h4>
+														<span class="uri">{{ $vimeoVideo['uri'] }}</span>
+														<span class="link">{{ $vimeoVideo['link'] }}</span>
+														<span class="video_url_hd">{{ $vimeoVideo['video_url_hd'] }}</span>
+														<span class="video_url_sd">{{ $vimeoVideo['video_url_sd'] }}</span>
+														<span class="duration">{{ $vimeoVideo['duration'] }}</span>
+													</div>
+													<span class="vimeo-link">
+														<a href="{{ $vimeoVideo['link'] }}">VIMEO</a>
+													</span>
+												</div>
+											@endforeach
+										</div>
+									</div>
+									<div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
+								</div>
 							</div>
+
 							{!! Form::hidden('video') !!}
 						</fieldset>
 					</div>
@@ -168,7 +190,15 @@
 
 @section('scripts')
 <script>
-$('document').ready(function(){
+$('document').ready(function() {
+	$('.video-labels').click(function() {
+		$('.video-labels').each(function(label) {
+			// $(label).removeClass('active');
+		});
+
+		// $(this).toggleClass('active');
+	});
+
 	$("#categories-input").select2({
 		tags: true
 	});
@@ -261,5 +291,97 @@ $('document').ready(function(){
 	});
 
 });
+
+/**
+* Called when files are dropped on to the drop target. For each file,
+* uploads the content to Drive & displays the results when complete.
+*/
+function handleFileSelect(evt) {
+ evt.stopPropagation();
+ evt.preventDefault();
+ var files = evt.dataTransfer.files; // FileList object.
+ var accessToken = 'f5f0f2ab9682194687abf2ffa487a202';
+ var upgrade_to_1080 = 'yes';
+
+ // Clear the results div
+ var node = document.getElementById('results');
+ while (node.hasChildNodes()) node.removeChild(node.firstChild);
+
+ // Reset the progress bar
+ updateProgress(0);
+
+ var uploader = new MediaUploader({
+     file: files[0],
+     token: accessToken,
+     upgrade_to_1080: upgrade_to_1080,
+     onError: function(data) {
+
+        var errorResponse = JSON.parse(data);
+        message = errorResponse.error;
+
+        var element = document.createElement("div");
+        element.setAttribute('class', "alert alert-danger");
+        element.appendChild(document.createTextNode(message));
+        document.getElementById('results').appendChild(element);
+
+     },
+     onProgress: function(data) {
+        updateProgress(data.loaded / data.total);
+     },
+     onComplete: function(videoId) {
+     	$('input[name=video]').val('');
+
+     	var videoFormData = {
+			uri: 'upload',
+			id: videoId
+		};
+
+		$('input[name=video]').val(JSON.stringify(videoFormData));
+
+        // var url = "https://vimeo.com/"+videoId;
+
+        // var a = document.createElement('a');
+        // a.appendChild(document.createTextNode(url));
+        // a.setAttribute('href',url);
+
+        // var element = document.createElement("div");
+        // element.setAttribute('class', "alert alert-success");
+        // element.appendChild(a);
+
+        // document.getElementById('results').appendChild(element);
+     }
+ });
+ uploader.upload();
+}
+
+/**
+* Dragover handler to set the drop effect.
+*/
+function handleDragOver(evt) {
+ evt.stopPropagation();
+ evt.preventDefault();
+ evt.dataTransfer.dropEffect = 'copy';
+}
+
+/**
+* Wire up drag & drop listeners once page loads
+*/
+document.addEventListener('DOMContentLoaded', function () {
+   var dropZone = document.getElementById('drop_zone');
+   dropZone.addEventListener('dragover', handleDragOver, false);
+   dropZone.addEventListener('drop', handleFileSelect, false);
+});
+;
+/**
+* Updat progress bar.
+*/
+function updateProgress(progress) {
+  progress = Math.floor(progress * 100);
+  var element = document.getElementById('progress');
+  element.setAttribute('style', 'width:'+progress+'%');
+  element.innerHTML = progress+'%';
+}
+
+progress
 </script>
 @endsection
